@@ -22,9 +22,9 @@ logging:
     print_freq: 1000
     eval_freq: 50000
     save_freq: 25000
-    checkpoint_path: /tmp
+    checkpoint_path: .
     lmdb: False
-    sample_path: /tmp
+    sample_path: .
 
 evaluation:
     gt_path: /workspace/ffhq/ffhq-08

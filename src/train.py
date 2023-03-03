@@ -268,7 +268,7 @@ def train(args, generator, g_ema, ckpt=None):
             real_img = this_data[0]
         else:
             real_img = next(loader)
-            real_img = real_img.to(device)
+            real_img = real_img.to(args.device)
 
         noise = torch.randn((args.runs.training.batch,
                              args.runs.generator.style_dim)).cuda()

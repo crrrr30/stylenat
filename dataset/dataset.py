@@ -1,5 +1,6 @@
 from io import BytesIO
 
+import tfrecord
 import lmdb
 from PIL import Image
 from torch.utils.data import Dataset, DataLoader, RandomSampler, SequentialSampler
@@ -45,6 +46,9 @@ class MultiResolutionDataset(Dataset):
 
         return img
 
+def TFRecordDataset(tfrecord_path, index_path, description):
+    return tfrecord.TFRecordDataset(tfrecord_path, index_path, description)
+    
 def unnormalize(image):
     if image.dim() == 4:
         image[:, 0, :, :] = image[:, 0, :, :] * 0.229 + 0.485
