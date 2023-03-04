@@ -20,10 +20,10 @@ def add_watermark(image, im_size, watermark_path="assets/watermark.jpg",
     Shi-Lab's work.
     '''
     image = image.cpu()
-    watermark = Image.open(watermark_path).resize((wmsize, wmsize))
-    watermark = toTensor(watermark)
-    loc = im_size - wmsize - bbuf
-    image[:,:,loc:-bbuf, loc:-bbuf] = watermark
+    # watermark = Image.open(watermark_path).resize((wmsize, wmsize))
+    # watermark = toTensor(watermark)
+    # loc = im_size - wmsize - bbuf
+    # image[:,:,loc:-bbuf, loc:-bbuf] = watermark
     return image
 
 def extract_range(args):
